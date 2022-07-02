@@ -12,9 +12,7 @@ r = requests.get(url,headers=headers)
 data = r.json()
 jobid = 1
 for i in data['jobDetails']:
-	#print(,"\n",i['companyName'])
 	soup=bs4.BeautifulSoup(i['jobDescription'],'html.parser')
-	#print(,"\n\n")
 	with open (str(jobid)+'.txt','w') as f:
 		f.write(i['title'])
 		f.write(i['companyName'])
